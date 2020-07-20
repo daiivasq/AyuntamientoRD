@@ -1,111 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:PV="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
-             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients" xmlns:PV="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="AyuntamientoRD.Views.HomePage">
     <ContentPage.Content>
         <Grid>
-            <magic:GradientView VerticalOptions="FillAndExpand">
-
-                <magic:GradientView.GradientSource>
-                    <!--<magic:LinearGradient Angle="353">
-                        <magic:GradientStop Color="#1206ff" Offset=".14"/>
-                        <magic:GradientStop Color="#1296a8" Offset=".52"/>
-                        <magic:GradientStop Color="#00d4ff" Offset=".76"/>
-                    </magic:LinearGradient>-->
-
-                    <magic:CssGradientSource>
-                        <![CDATA[linear-gradient(190deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 45%)]]>
-                    </magic:CssGradientSource>
-                </magic:GradientView.GradientSource>
-                
-            </magic:GradientView>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                <PV:PancakeView Grid.Row="0"
+                                CornerRadius="0,0,40,40"
+                                 BackgroundColor="#224C73">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="90"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Miercoles 27 2020 Enero" 
+                               FontSize="26"
+                               Margin="20"
+                                 TextColor="White"
+                HorizontalOptions="CenterAndExpand"  />
 
-                <Label Text="Now --> Villa Aura, SDO, RD " FontSize="18" TextColor="Black"  Grid.Row="0" Grid.ColumnSpan="4"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"  FontFamily="SmallTypeMedium"/>
-
-                <Label Text="Todo lo que necesitas para tu sector" Margin="30,0" FontSize="28" TextColor="Black" FontAttributes="Bold" Grid.Row="1" Grid.ColumnSpan="4"
+                        <Label Text="¿Que necesitas?" Margin="30,0" FontSize="28" 
+                               FontAttributes="Bold" Grid.Row="1" 
                 VerticalOptions="StartAndExpand" 
-                HorizontalOptions="CenterAndExpand" FontFamily="SmallTypeMedium" />
-               
-                
-                <Frame Grid.Row="2"  VerticalOptions="StartAndExpand" 
-                HorizontalOptions="CenterAndExpand" BorderColor="Black" Margin="30,0,30,0" BackgroundColor="Transparent" CornerRadius="5" Grid.ColumnSpan="4" >
-            
-                    <SearchBar    VerticalOptions="CenterAndExpand"  Text="Busca un sector"
-                HorizontalOptions="CenterAndExpand" />
-                    
-                </Frame>
-                
-                
-                <Label Text="¿Que necesitas?" FontSize="18" Margin="30,-9" TextColor="Black" FontAttributes="Bold" Grid.Row="2" Grid.ColumnSpan="4"
-                VerticalOptions="EndAndExpand" 
-                HorizontalOptions="StartAndExpand" />
+                               TextColor="White"
+                HorizontalOptions="CenterAndExpand"  />
 
-                <PV:PancakeView CornerRadius="60,60,60,60"  Margin="40,5" BackgroundColor="#00d4ff" Opacity="0.5" Grid.Row="4" VerticalOptions="StartAndExpand" 
-                HorizontalOptions="StartAndExpand" HeightRequest="100" WidthRequest="100" Grid.ColumnSpan="2">
-                    <PV:PancakeView.GestureRecognizers  >
-                        <TapGestureRecognizer Command="{Binding GotoMapsPage}" NumberOfTapsRequired="1"/>
-                    </PV:PancakeView.GestureRecognizers>
-                    <Image Source="bin.png" Margin="20,20" />
-                </PV:PancakeView>
-                <Label Text="¿Desechos solidos?" FontSize="14" TextColor="Black" FontAttributes="Bold" Margin="23,-5" Grid.Row="4" Grid.ColumnSpan="2"
-                VerticalOptions="EndAndExpand" 
-                HorizontalOptions="StartAndExpand" />
 
-                <PV:PancakeView CornerRadius="60,60,60,60"  Margin="50,5" BackgroundColor="#00d4ff"  Grid.Row="4"  Opacity="0.5" VerticalOptions="StartAndExpand" 
-                HorizontalOptions="EndAndExpand" HeightRequest="100" WidthRequest="100" Grid.Column="1"  Grid.ColumnSpan="3">
-                    <PV:PancakeView.GestureRecognizers  >
-                        <TapGestureRecognizer Command="{Binding GotoReportsPage}" NumberOfTapsRequired="1"/>
-                    </PV:PancakeView.GestureRecognizers>
-                    <Image Source="report.png" Margin="20,20" />
+                        <PV:PancakeView Grid.Row="2"  VerticalOptions="StartAndExpand" 
+                                        BorderColor="Black"
+                                        Padding="20,5,20,5"  
+                                        BackgroundColor="White"
+                                        Margin="20,0,20,0"
+                                        CornerRadius="10"  >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0"
+                               Text=""
+                               TextColor="Black"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="24"
+                               FontFamily="FontAwesomeSolid"/>
+                                <Entry Grid.Column="1"
+                               Placeholder="Buscar directorio"/>
+                            </Grid>
+                        </PV:PancakeView>
+                    </Grid>
                 </PV:PancakeView>
-                <Label Text="Reportes / quejas ?" FontSize="14" TextColor="Black" FontAttributes="Bold" Margin="30,-5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"
-                VerticalOptions="EndAndExpand" 
-                HorizontalOptions="EndAndExpand" />
 
-                <PV:PancakeView CornerRadius="60,60,60,60"  Margin="40,5" BackgroundColor="#00d4ff"  Grid.Row="5"  Opacity="0.5" VerticalOptions="EndAndExpand" 
-                HorizontalOptions="StartAndExpand" HeightRequest="100" WidthRequest="100" Grid.ColumnSpan="2">
-                    <PV:PancakeView.GestureRecognizers  >
-                        <TapGestureRecognizer Command="{Binding GotoLegalPage}" NumberOfTapsRequired="1"/>
-                    </PV:PancakeView.GestureRecognizers>
-                    <Image Source="law.png" Margin="20,20" />
-                </PV:PancakeView>
-                <Label Text="Legal" FontSize="14" TextColor="Black" FontAttributes="Bold" Margin="70,-20" Grid.Row="5" Grid.ColumnSpan="2"
-                VerticalOptions="EndAndExpand" 
-                HorizontalOptions="StartAndExpand" />
+                <CollectionView ItemsSource="{Binding ItemsPage}"
+                                Grid.Row="1"
+                                SelectionMode="Single">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"
+                                         Span="2"
+                                         VerticalItemSpacing="40"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="White" >
+                                <PV:PancakeView  CornerRadius="60,60,60,60"  
+                                 BackgroundColor="SteelBlue"  
+                HorizontalOptions="CenterAndExpand" HeightRequest="100" WidthRequest="100" >
+                                    <Image Source="{Binding ImagePage}" Margin="20,20" />
+                                </PV:PancakeView>
+                                <Label Text="{Binding Title}"
+                                       FontSize="14" 
+                                       TextColor="Black" 
+                                       FontAttributes="Bold"
+                                       VerticalOptions="EndAndExpand" 
+                                      HorizontalOptions="CenterAndExpand" />   
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-                <PV:PancakeView CornerRadius="60,60,60,60"  Margin="50,5" BackgroundColor="#00d4ff"  Grid.Row="5"  Opacity="0.5" VerticalOptions="EndAndExpand" 
-                HorizontalOptions="EndAndExpand" HeightRequest="100" WidthRequest="100" Grid.Column="1"  Grid.ColumnSpan="3">
-                    <PV:PancakeView.GestureRecognizers  >
-                        <TapGestureRecognizer Command="{Binding GotoDirectoryPage}" NumberOfTapsRequired="1"/>
-                    </PV:PancakeView.GestureRecognizers>
-                    <Image Source="politics.png" Margin="20,20" />
-                </PV:PancakeView>
-                <Label Text="Politicos" FontSize="14" TextColor="Black" FontAttributes="Bold" Margin="75,-20" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"
-                VerticalOptions="EndAndExpand" 
-                HorizontalOptions="EndAndExpand" />
+
             </Grid>
          
         </Grid>

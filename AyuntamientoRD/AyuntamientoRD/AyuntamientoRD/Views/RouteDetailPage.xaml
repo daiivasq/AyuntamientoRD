@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="AyuntamientoRD.Views.RouteDetailView">
+    <ContentPage.Content>
+        <Grid Padding="10,10,10,0"   >
+            <Grid.ColumnDefinitions>
+                
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   HorizontalOptions="CenterAndExpand"
+                   >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="  #225255" FontSize="26" FontAttributes="Italic"/>
+                        <Span Text="{x:Static system:Environment.NewLine}"/>
+                        <Span Text="Ruta del camion" FontSize="20" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Picker Grid.Row="1"
+                    
+                    />
+            <Label Grid.Row="2"
+                   
+                   Text="Fecha"/>
+            <Label Grid.Row="3" 
+                   Text="{Binding TruckDetail.Id}"
+                   FontSize="20"/>
+            <Grid Grid.Row="4" Padding="25,10,10,40"    >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.RowSpan="3"
+                        Grid.Column="1"
+                       BackgroundColor="Gray"/>
+                <yummy:PancakeView CornerRadius="80"
+                                   Grid.ColumnSpan="3"
+                                     BackgroundColor="DodgerBlue"
+                                   >
+                    <Label Text=""
+                           
+                           FontFamily="FontAwesomeSolid"
+                                               TextColor="White"
+                                               FontSize="24"
+                                               HorizontalOptions="CenterAndExpand"
+                                               VerticalOptions="CenterAndExpand"/>
+                </yummy:PancakeView>
+
+                    <Label Text=""  Grid.ColumnSpan="3"
+                               Grid.Row="1"
+                                BackgroundColor="White"
+                              FontFamily="FontAwesomeSolid"
+                              TextColor="Black"
+                              FontSize="24"
+                              HorizontalOptions="Center"
+                              VerticalOptions="CenterAndExpand"/>
+                    <yummy:PancakeView CornerRadius="40"
+                                                       Grid.Row="2"         
+                                                       WidthRequest="80"
+                                                       HeightRequest="60"
+                                                       Grid.ColumnSpan="3"
+                                                        BackgroundColor="DodgerBlue">
+                    <Label Text=""
+                                               TextColor="White"
+                                               FontSize="24"
+                                              FontFamily="FontAwesomeSolid"
+                                               HorizontalOptions="Center"
+                                               
+                                               VerticalOptions="CenterAndExpand"/>
+                </yummy:PancakeView>
+                <Label  Grid.Column="3" 
+                         FontSize="20"
+                         Text="Ultima ruta"
+                          VerticalOptions="CenterAndExpand"/>
+                <Label Grid.Row="1"
+                       VerticalOptions="CenterAndExpand"
+                        FontSize="20"
+                        Grid.Column="3" 
+                       Text="Tiempo estimado"
+                      />
+                <Label Grid.Row="2" 
+                       FontSize="20"
+                      VerticalOptions="CenterAndExpand"
+                       Text="Destino"
+                       Grid.Column="3"   />
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AyuntamientoRD.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MapPage : ContentPage
+    public partial class TruckRoutePage : ContentPage
     {
-        public MapPage()
+        public TruckRoutePage()
         {
             InitializeComponent();
         }

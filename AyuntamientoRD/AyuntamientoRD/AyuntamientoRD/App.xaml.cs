@@ -17,8 +17,8 @@ namespace AyuntamientoRD
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-            NavigationService.NavigateAsync(new Uri($"{NavigationConstants.HomePage}", UriKind.Absolute));
+            Device.SetFlags(new string[] { "Expander_Experimental" });
+            NavigationService.NavigateAsync(new Uri($"/TruckRoutePage", UriKind.Absolute));
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
@@ -26,7 +26,8 @@ namespace AyuntamientoRD
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<DirectoryPage, DirectoryPageViewModel>();
             containerRegistry.RegisterForNavigation<LegalPage, LegalPageViewModel>();
-            containerRegistry.RegisterForNavigation<MapPage, MapPageViewModel>();
+            containerRegistry.RegisterForNavigation<RouteDetailView, RouteDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<TruckRoutePage, TruckRoutePageViewModel>();
             containerRegistry.RegisterForNavigation<ReportsPage, ReportsPageViewModel>();
         }
     }
