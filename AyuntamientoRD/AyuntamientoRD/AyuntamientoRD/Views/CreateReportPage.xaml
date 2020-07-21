@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:AyuntamientoRD.Renderers"
+             mc:Ignorable="d"
+             x:Class="AyuntamientoRD.Views.CreateReportPage">
+    <ContentPage.Content>
+        <Grid Padding="5" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="1">
+                <StackLayout Padding="15" Spacing="10">
+                    <Label Text="Nombre completo:" TextColor="Black" FontSize="14" />
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                               Text=""
+                               TextColor="#2778e3"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="20"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                            <local:BorderlessEntry Placeholder="Nombre completo"  TextColor="DarkGray" FontFamily="CD" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="Documento de identidad:" TextColor="Black" FontSize="14" />
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                               Text=""
+                               TextColor="#2778e3"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="20"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                            <local:BorderlessEntry Placeholder="No. de identidad   "  TextColor="DarkGray" FontFamily="CD" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="Correo electronico:" TextColor="Black" FontSize="14" />
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                               Text=""
+                               TextColor="#2778e3"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="20"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                            <local:BorderlessEntry Placeholder="Correo electronico"  TextColor="DarkGray" FontFamily="CD" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="Sector:" TextColor="Black" FontSize="14" />
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                               Text=""
+                               TextColor="#2778e3"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="20"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                            <local:BorderlessEntry Placeholder="Sector                     "  TextColor="DarkGray" FontFamily="CD" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Label Text="Asunto:" TextColor="Black" FontSize="14" />
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                               Text=""
+                               TextColor="#2778e3"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="20"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                            <local:BorderlessEntry Placeholder="Asunto del reporte"  TextColor="DarkGray" FontFamily="CD" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <Label Text="Descripcion del problema :" FontFamily="CD_Bold" TextColor="Black" FontSize="14" />
+
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+
+                            <Editor Placeholder="Ingrese la informacion aqui!" Margin="15,0" FontFamily="CD"
+                                    HeightRequest="200"     />
+                        </StackLayout>
+                    </Frame>
+
+
+
+                    <Button  CornerRadius="15" Text="Enviar reporte" FontSize="16" TextColor="White" BackgroundColor="#2778e3" />
+
+                </StackLayout>
+
+
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

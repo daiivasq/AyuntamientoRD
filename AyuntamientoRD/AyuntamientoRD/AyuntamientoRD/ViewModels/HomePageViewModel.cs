@@ -52,7 +52,7 @@ namespace AyuntamientoRD.ViewModels
         {
             GotoMapsPage = new DelegateCommand(async () =>
             {
-                await navigationService.NavigateAsync(new Uri(NavigationConstants.MapPage, UriKind.Relative));
+                await navigationService.NavigateAsync(new Uri(NavigationConstants.TruckRoutePage, UriKind.Relative));
             });
             GotoReportsPage = new DelegateCommand(async () =>
             {

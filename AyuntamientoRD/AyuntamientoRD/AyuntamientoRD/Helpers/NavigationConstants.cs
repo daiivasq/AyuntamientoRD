@@ -11,5 +11,8 @@ namespace AyuntamientoRD.Helpers
         public const string LegalPage = "/LegalPage";
         public const string DirectoryPage = "/DirectoryPage";
         public const string ReportsPage = "/ReportsPage";
+        public const string TruckRoutePage = "/TruckRoutePage";
+        public const string CreateReportPage = "/CreateReportPage";
+       
     }
 }

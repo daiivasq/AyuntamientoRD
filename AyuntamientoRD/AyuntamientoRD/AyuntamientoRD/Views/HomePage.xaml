@@ -3,93 +3,208 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:PV="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:PV="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:local="clr-namespace:AyuntamientoRD.Renderers"
              mc:Ignorable="d"
+               Padding="0,40,0,0"
+             BackgroundColor="#2778e3"
              x:Class="AyuntamientoRD.Views.HomePage">
     <ContentPage.Content>
-        <Grid>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
-
-                <PV:PancakeView Grid.Row="0"
-                                CornerRadius="0,0,40,40"
-                                 BackgroundColor="#224C73">
-                    <Grid >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="90"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Label Text="Miercoles 27 2020 Enero" 
-                               FontSize="26"
-                               Margin="20"
-                                 TextColor="White"
-                HorizontalOptions="CenterAndExpand"  />
-
-                        <Label Text="¿Que necesitas?" Margin="30,0" FontSize="28" 
-                               FontAttributes="Bold" Grid.Row="1" 
-                VerticalOptions="StartAndExpand" 
-                               TextColor="White"
-                HorizontalOptions="CenterAndExpand"  />
+        
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
 
-                        <PV:PancakeView Grid.Row="2"  VerticalOptions="StartAndExpand" 
-                                        BorderColor="Black"
-                                        Padding="20,5,20,5"  
-                                        BackgroundColor="White"
-                                        Margin="20,0,20,0"
-                                        CornerRadius="10"  >
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0"
+            <StackLayout>
+                <Grid Margin="0,0,0,0">
+                    <StackLayout Margin="20,0,20,0" Spacing="20">
+                        <Label
+                        FontAttributes="Bold"
+                        FontSize="22"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Todo lo que necesitas para tu sector"
+                        TextColor="White"
+                        VerticalOptions="StartAndExpand"
+                        WidthRequest="200" 
+                            HeightRequest="125"/>
+                    </StackLayout>
+           
+                    <PV:PancakeView
+                    Margin="20,0,20,-20"
+                    Padding="20,0,0,0"
+                    BackgroundColor="White"
+                    BorderThickness="1"
+                    CornerRadius="25"
+                  
+                    HeightRequest="50"
+                    VerticalOptions="EndAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
                                Text=""
-                               TextColor="Black"
+                               TextColor="#2778e3"
                                VerticalOptions="CenterAndExpand"
                                FontSize="24"
                                FontFamily="FontAwesomeSolid"/>
-                                <Entry Grid.Column="1"
-                               Placeholder="Buscar directorio"/>
-                            </Grid>
-                        </PV:PancakeView>
-                    </Grid>
+
+                            <local:BorderlessEntry
+                            ClearButtonVisibility="WhileEditing"
+                            FontSize="18"
+                            HorizontalOptions="FillAndExpand"
+                            Keyboard="Text"
+                            Placeholder="Busque su localizacion"
+                                Margin="30,0"
+                            PlaceholderColor="#99A1B3"
+                            TextColor="#484848" />
+                            
+
+                        </StackLayout>
+                    </PV:PancakeView>
+                </Grid>
+                <PV:PancakeView
+                Margin="0,30,0,0"
+                Padding="30,0,30,30"
+                BackgroundColor="White"
+                CornerRadius="40,40,0,0"
+                VerticalOptions="FillAndExpand">
+                  
+                    <StackLayout>
+                        <Label
+                        Margin="20"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="¿Que buscas?"
+                        TextColor="#2778e3"
+                        VerticalOptions="Center" />
+                        <Grid Margin="5" ColumnSpacing="20" RowSpacing="30">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="230" />
+                                <RowDefinition Height="230" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <PV:PancakeView
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Padding="10"
+                            BackgroundColor="White" 
+                            CornerRadius="15"
+                            Elevation="3">
+                                <PV:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GotoMapsPage}" NumberOfTapsRequired="1"/>
+                                </PV:PancakeView.GestureRecognizers>
+                                <StackLayout>
+                                    <Label
+                               Text=""
+                               TextColor="#2778e3"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="80"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                                    <Label
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Desechos solidos"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </PV:PancakeView>
+                            <PV:PancakeView
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Padding="10"
+                            BackgroundColor="White"
+                            BorderThickness="1"
+                            CornerRadius="15"
+                            Elevation="3">
+                                <PV:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GotoLegalPage}" NumberOfTapsRequired="1"/>
+                                </PV:PancakeView.GestureRecognizers>
+                                <StackLayout>
+                                    <Label
+                               Text=""
+                               TextColor="#2778e3"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="80"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                                    <Label
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Conoce tus derechos"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </PV:PancakeView>
+                            <PV:PancakeView
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Padding="10"
+                            BackgroundColor="White"
+                            BorderThickness="1"
+                            CornerRadius="15"
+                            Elevation="3">
+                                <PV:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GotoDirectoryPage}" NumberOfTapsRequired="1"/>
+                                </PV:PancakeView.GestureRecognizers>
+                                <StackLayout>
+                                    <Label
+                               Text=""
+                               TextColor="#2778e3"
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="80"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                                    <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Representantes"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </PV:PancakeView>
+                            <PV:PancakeView
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Padding="10"
+                            BackgroundColor="White"
+                            BorderThickness="1"
+                            CornerRadius="15"
+                            Elevation="3">
+                                <PV:PancakeView.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GotoReportsPage}" NumberOfTapsRequired="1"/>
+                                </PV:PancakeView.GestureRecognizers>
+                                <StackLayout>
+                                    <Label
+                               Text=""
+                               TextColor="#2778e3"
+                                       
+                               VerticalOptions="CenterAndExpand"
+                               FontSize="70"
+                               HorizontalOptions="CenterAndExpand"
+                               FontFamily="FontAwesomeSolid"/>
+                                    <Label
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    HorizontalOptions="CenterAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Reportes o quejas"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </PV:PancakeView>
+                        </Grid>
+                    </StackLayout>
+
                 </PV:PancakeView>
-
-                <CollectionView ItemsSource="{Binding ItemsPage}"
-                                Grid.Row="1"
-                                SelectionMode="Single">
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical"
-                                         Span="2"
-                                         VerticalItemSpacing="40"/>
-                    </CollectionView.ItemsLayout>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout BackgroundColor="White" >
-                                <PV:PancakeView  CornerRadius="60,60,60,60"  
-                                 BackgroundColor="SteelBlue"  
-                HorizontalOptions="CenterAndExpand" HeightRequest="100" WidthRequest="100" >
-                                    <Image Source="{Binding ImagePage}" Margin="20,20" />
-                                </PV:PancakeView>
-                                <Label Text="{Binding Title}"
-                                       FontSize="14" 
-                                       TextColor="Black" 
-                                       FontAttributes="Bold"
-                                       VerticalOptions="EndAndExpand" 
-                                      HorizontalOptions="CenterAndExpand" />   
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-
-
-            </Grid>
-         
-        </Grid>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
